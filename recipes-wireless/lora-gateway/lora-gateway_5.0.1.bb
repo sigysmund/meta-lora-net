@@ -15,11 +15,12 @@ CFLAGS_append = "-I ${S}/libloragw/inc -I ${S}/libloragw -I ${S}/util_pkt_logger
 do_install() {
 	install -d ${D}${bindir}
 	install -d ${D}${docdir}
-	install -d ${D}${libdir}
+	install -d ${D}${libdir}/libloragw/inc
 	install -d ${D}${includedir}/libloragw
 	
 	install -D -m 0644 ${B}/libloragw/inc/* ${D}${includedir}/libloragw
 	
+	install -D -m 0644 ${B}/libloragw/inc/* ${D}${libdir}/libloragw/inc
 	install -D -m 0644 ${B}/libloragw/libloragw.a ${D}${libdir}/libloragw/libloragw.a
 	install -D -m 0644 ${S}/libloragw/library.cfg ${D}${libdir}/libloragw/library.cfg
 	
@@ -58,6 +59,7 @@ FILES_${PN}-dev = " \
 	${includedir}/libloragw/* \
 "
 FILES_${PN}-staticdev = " \
+	${libdir}/libloragw/inc/*.h \
 	${libdir}/libloragw/*.a \
 	${libdir}/libloragw/*.cfg \
 "
