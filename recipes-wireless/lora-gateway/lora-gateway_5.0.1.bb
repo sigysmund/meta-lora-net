@@ -25,6 +25,7 @@ do_install() {
 	
 	install ${B}/libloragw/test_* ${D}${bindir}
 	install ${B}/util_*/util_* ${D}${bindir}
+	install ${S}/*.sh ${D}${bindir}
 	
 	install -D -m 0644 ${S}/readme.md ${D}${docdir}/libloragw/changelog.md
 	install -D -m 0644 ${S}/libloragw/readme.md ${D}${docdir}/libloragw/README.md
