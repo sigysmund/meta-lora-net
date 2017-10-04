@@ -35,6 +35,9 @@ do_install() {
 	install -D -m 0644 ${S}/lora_pkt_fwd/local_conf.json ${D}${docdir}/lora-pkt-fwd/local_conf.json
 	install -D -m 0755 ${S}/lora_pkt_fwd/update_gwid.sh ${D}${docdir}/lora-pkt-fwd
 	install -D -m 0644 ${S}/lora_pkt_fwd/cfg/*.json.* ${D}${docdir}/lora-pkt-fwd/conf
+	
+	rm -f ${D}${bindir}/util_tx_test
+	rm -f ${D}${bindir}/.debug/util_tx_test
 }
 
 PACKAGE_DEBUG_SPLIT_STYLE = "debug-without-src"
